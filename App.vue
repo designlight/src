@@ -13,9 +13,10 @@
 		>{{ s }}</option>
 	</select>
 	<hr>
-
-
 	<p>{{social}}</p>
+<hr>
+	<input type="text" v-model.number="age">
+	<p>{{age}}</p>
 
 	</div>
 </template>
@@ -30,9 +31,16 @@ export default {
 				name: 'Initial state',
 				defaultSocial: 'vk',
 				social: 'instagram',
-				socialsList: ['instagram', 'vk', 'facebook']
+				socialsList: ['instagram', 'vk', 'facebook'],
+				age: 20
 			}
 	},
+	watch: {
+		age (value) {
+			console.log(value)
+			console.log(typeof value)
+		}
+	}
 }
 
 </script>
