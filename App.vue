@@ -1,22 +1,35 @@
 <template>
-
 	<div>
+
 	<h2>Form inputs</h2>
-		<textarea v-model="textarea"></textarea>
 
-		<p>{{ textarea }}</p>
+	<label>
+			<input type="checkbox" value="instagram" v-model="social"> Instagram
+	</label>
+
+	<label>
+			<input type="checkbox" value="vk" v-model="social"> Vk
+	</label>
+
+	<label>
+			<input type="checkbox" value="facebook" v-model="social"> Facebook
+	</label>
+
+	<hr>
+
+	<ul>
+		<li v-for="s in social">{{ s }}</li>
+	</ul>
+		
 	</div>
-
 </template>
 
 <script>
 
-import ListMixin from './ListMixin'
-
 export default {
 	data () {
 			return {
-				textarea: 'I am Initial state',
+				social: ['vk']
 			}
 	},
 }
@@ -24,11 +37,5 @@ export default {
 </script>
 
 <style scoped>
-	textarea {
-		height: 100px;
-		width: 400px;
-	}
-	p {
-		white-space: pre;
-	}
+
 </style>
